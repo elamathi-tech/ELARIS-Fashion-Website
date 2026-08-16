@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="offerBar" class="bg-blue-950 text-white py-2 px-4">
+    <div class="flex items-center justify-center relative">
+      <p class="text-sm md:text-base text-center">
+        Sign Up and <span class="font-bold">GET 20% OFF</span> for your first order  
+      </p>
+      <button id="closeOffer" class="absolute right-2 md:right-8 text-xl font-semibold hover:text-gray-300 transition" aria-label="Close offer">&times;</button>
+    </div>
+  </div>
+
+  <!--Desktop navbar-->
+  <nav class="flex justify-between p-5 bg-amber-100">
+    <h1 class="text-2xl font-bold">ELARIS</h1>
+    <svg id="menubar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="lucide lucide-menu-icon lucide-menu md:hidden ">
+      <path d="M4 5h16" />
+      <path d="M4 12h16" />
+      <path d="M4 19h16" />
+    </svg>
+
+    <ul class="flex gap-5 hidden md:flex">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./collections.html">Collections</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!--Mobile navbar-->
+  <section id="sidenav" class="bg-blue-950 fixed transition-[left] duration-1000 z-20 md:hidden"
+    style="width:50%; height:100vh; top:0; left:-50%">
+    <div class="text-right p-5">
+      <p id="close" class="inline font-bold text-2xl cursor-pointer ">X</p>
+    </div>
+    <ul class="flex gap-5 flex-col p-4 ">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./collections.html">Collections</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+  </section>
+
+
+  <section class="w-[90%] max-w-4xl mx-auto py-16">
+    <div class="border border-gray-200 rounded-2xl p-6 md:p-10">
+      <div class="mb-8">
+        <p class="text-gray-500 text-xs uppercase tracking-[4px]">
+          Get In Touch
+        </p>
+        <h1 class="text-3xl font-bold mt-2">
+          Contact ELARIS
+        </h1>
+        <p class="text-gray-500 text-sm mt-3 leading-relaxed">
+          Have a question about our collections, products, or your order?
+        Send us a message and we'll get back to you soon.
+        </p>
+      </div>
+
+      <form id="contactForm">
+        <div>
+          <label for="name" class="block text-sm font-medium mb-2">
+            Name
+          </label>
+          <input id="name" name="name" type="text" placeholder="Enter your name" required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-900 focus:ring-1 focus:ring-gray-900 transition duration-300">
+        </div>
+
+        <div class="mt-5">
+          <label for="email" class="block text-sm font-medium mb-2">
+            Email
+          </label>
+          <input id="email" name="email" type="email" placeholder="Enter your email address" required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-900 focus:ring-1 focus:ring-gray-900 transition duration-300">
+        </div>
+
+        <div class="mt-5">
+          <label for="subject" class="block text-sm font-medium mb-2">
+            Subject
+          </label>
+          <input id="subject" name="subject" type="text" placeholder="What is your message about?" required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-900 focus:ring-1 focus:ring-gray-900 transition duration-300">
+        </div>
+
+        <div class="mt-5">
+          <label for="message" class="block text-sm font-medium mb-2">
+            Message
+          </label>
+          <textarea id="message" name="message" rows="6"  placeholder="Write your message..." required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-gray-900 focus:ring-1 focus:ring-gray-900 transition duration-300"></textarea>
+        </div>
+
+        <button type="submit" class="w-full mt-6 bg-gray-900 text-white py-3.5 rounded-lg font-semibold hover:bg-gray-700 transition duration-300">
+          Send Message
+        </button>
+
+        <p id="successMessage" class="hidden text-green-600 text-sm text-center mt-4">
+          Thank you! Your message has been sent successfully.
+        </p>
+      </form>
+    </div>
+  </section>
+
+
+  <section id="newsletterSection" class="w-[90%] mx-auto py-16">
+    <div class="bg-blue-950 text-white rounded-2xl px-6 py-12 md:px-12 md:py-16 text-center">
+      <p class="text-gray-400 mb-3 text-xs md:text-sm uppercase tracking-[4px] ">
+        Stay in Style
+      </p>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold">
+        Join the ELARIS Newsletter
+      </h1>
+      <p class="text-gray-300 text-lg md:text-base max-w-[600px] mx-auto mt-4 leading-relaxed">
+        Be the first to discover new arrivals, exclusive collections, and special offers curated just for you.
+      </p>
+
+      <form class="w-full flex flex-col sm:flex-row gap-3 max-w-[650px]  mx-auto mt-8">
+        <input type="email" placeholder="Enter your email address" class="w-full min-w-0 bg-white text-black flex-1 px-5 rounded-lg outline-none border-2 border-transparent focus:border-gray-400 transition duration-300 " required>
+        
+        <button type="submit" class="shrink-0 rounded-lg bg-white text-black font-semibold px-7 py-4 hover:bg-gray-300 transition duration-300 ">
+          Subscribe
+        </button>
+
+      </form>
+      <p class="text-gray-400 text-sm mt-5">
+        No spam. Just style, inspiration, and ELARIS updates.
+      </p>
+    </div>
+  </section>
+
+  <section id="footerSection" class="bg-blue-950 text-white rounded-t-2xl">
+    <div class="w-[90%] mx-auto py-12">
+
+      <div class="flex flex-col justify-between gap-8 md:flex-row ">
+        <div class="max-w-[550px]">
+          <h1 class="text-2xl font-bold tracking-wide">
+            ELARIS
+          </h1>
+          <p class="text-gray-400 text-sm leading-relaxed mt-3">
+            Discover effortless fashion, timeless styles, and carefully
+            curated collections designed to make every look feel uniquely yours.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-base mb-4">
+            Explore
+          </h3>
+          <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400">
+
+            <a href="#" class="hover:text-white transition">Home</a>
+            <a href="#" class="hover:text-white transition">Collections</a>
+            <a href="#" class="hover:text-white transition">New Arrivals</a>
+            <a href="#" class="hover:text-white transition">Most Wanted</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-6 mt-10">
+
+        <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white hover:scale-110 transition duration-300">
+          <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+        </svg>
+        </a>
+
+        <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-white hover:scale-110 transition duration-300">
+           <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26
+          8.502 11.24H16.17l-5.214-6.817
+          L4.99 21.75H1.68l7.73-8.835
+          L1.254 2.25H8.08l4.713 6.231
+          5.45-6.231Z"/>
+        </svg>
+        </a>
+
+        <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-white hover:scale-110 transition duration-300">
+          <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="currentColor">
+          <path
+            d="M14 8h3V4h-3c-3.3 0-5 1.7-5 5v3H6v4h3v8h4v-8h3l1-4h-4V9c0-.7.3-1 1-1Z"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="md:flex-row flex flex-col justify-between gap-3 text-sm text-gray-500 border-t border-gray-700 mt-8 pt-6 ">
+        <p>
+          &copy; 2026 ELARIS. All rights reserved.
+        </p>
+        <p>
+          Designed for fashion. Built with simplicity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="./script.js"></script>
+</body>
+</html>

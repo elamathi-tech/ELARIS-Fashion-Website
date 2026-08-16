@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Document</title>
+</head>
+<body class="font-Sans">
+
+  <div id="offerBar" class="bg-blue-950 text-white py-2 px-4">
+    <div class="flex items-center justify-center relative">
+      <p class="text-sm md:text-base text-center">
+        Sign Up and <span class="font-bold">GET 20% OFF</span> for your first order  
+      </p>
+      <button id="closeOffer" class="absolute right-2 md:right-8 text-xl font-semibold hover:text-gray-300 transition" aria-label="Close offer">&times;</button>
+    </div>
+  </div>
+
+  <!--Desktop navbar-->
+  <nav class="flex justify-between p-5 bg-amber-100">
+    <h1 class="text-2xl font-bold">ELARIS</h1>
+    <svg id="menubar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="lucide lucide-menu-icon lucide-menu md:hidden ">
+      <path d="M4 5h16" />
+      <path d="M4 12h16" />
+      <path d="M4 19h16" />
+    </svg>
+
+    <ul class="flex gap-5 hidden md:flex">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./collections.html">Collections</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!--Mobile navbar-->
+  <section id="sidenav" class="bg-blue-950 text-white fixed transition-[left] duration-1000 z-20 md:hidden"
+    style="width:50%; height:100vh; top:0; left:-50%">
+    <div class="text-right p-5">
+      <p id="close" class="inline font-bold text-2xl cursor-pointer ">&times;</p>
+    </div>
+    <ul class="flex gap-5 flex-col p-4 ">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./collections.html">Collections</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+  </section>
+
+
+  <section id="collectionsSection" class="w-[90%] mx-auto py-12">
+    <div class="flex flex-col lg:flex-row gap-8">
+
+      <!--Filter Sidebar--> 
+      <div id="filterSection" class="hidden lg:block lg:w-[220px] shrink-0">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-xl font-bold">
+            Filters
+          </h2>
+          
+          <!--Mobile close-->
+          <button id="closeFilter" class="lg:hidden text-2xl">
+            &times;
+          </button>
+        </div>
+
+        <!--Occasion-->
+        <div class="mb-8">
+          <h3 class="font-semibold mb-4">
+            Occasion
+          </h3>
+          <label class="flex items-center gap-2 mb-3 text-sm">
+            <input class="filter-checkbox" type="checkbox" value="Summer" data-filter="occasion" >
+            Summer
+          </label>
+
+          <label class="flex items-center gap-2 mb-3 text-sm">
+            <input class="filter-checkbox" type="checkbox" value="Party" data-filter="occasion" >
+            Party
+          </label>
+
+          <label class="flex items-center gap-2 mb-3 text-sm">
+            <input class="filter-checkbox" type="checkbox" value="Beach" data-filter="occasion" >
+            Beach
+          </label>
+        </div>
+
+        <!--Colors-->
+        <div class="mb-8">
+          <h3 class="font-semibold" mb-4>
+            Colors
+          </h3>
+
+          <label class="flex items-center gap-2 mb-3 text-sm">
+            <input class="filter-checkbox" type="checkbox" value="Red" data-filter="color" >
+            Red
+          </label>
+
+          <label class="flex items-center gap-2 mb-3 text-sm">
+            <input class="filter-checkbox" type="checkbox" value="Blue" data-filter="color" >
+            Blue
+          </label>
+
+          <label class="flex items-center gap-2 mb-3 text-sm">
+            <input class="filter-checkbox" type="checkbox" value="White" data-filter="color" >
+            White
+          </label>
+
+          <label class="flex items-center gap-2 mb-3 text-sm">
+            <input class="filter-checkbox" type="checkbox" value="Green" data-filter="color" >
+             Green
+          </label>
+        </div>
+
+        <!--Arrivals-->
+        <div class="mb-8">
+          <h3 class="font-semibold mb-4">
+            Arrivals
+          </h3>
+
+          <label class="flex items-center gap-2 mb-3 text-sm">
+            <input class="filter-checkbox" type="checkbox" value="New" data-filter="arrival" >
+             New
+          </label>
+
+          <label class="flex items-center gap-2 mb-3 text-sm">
+            <input class="filter-checkbox" type="checkbox" value="Old" data-filter="arrival" >
+             Old
+          </label>
+        </div>
+
+        <!--Clear Filters-->
+        <button id="clearFilters" class="text-sm underline hover:no-underline">
+          Clear all filters
+        </button>
+      </div>
+
+      <!--Products Area-->
+      <main class="flex-1">
+        <!--Mobile Filter Button-->
+        <button id="openFilter" class="lg:hidden mb-5 border border-gray-300 px-5 py-3 rounded-lg font-semibold">
+          Filters
+        </button>
+
+        <!--Search-->
+        <div class="relative mb-8">
+          <input id="searchInput" type="text" placeholder="Search ELARIS Collections..." class="w-full border border-gray-800 rounded-xl px-5 py-4 pr-14 outline-none focus:ring-2 focus:ring-gray-300">
+          <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="absolute right-5 top-1/2 -translate-y-1/2">
+
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+
+        </svg>
+        </div>
+
+        <!--Heading-->
+
+        <div class="flex justify-between items-center mb-6">
+          <div>
+            <p class="text-gray-500 text-xs uppercase tracking-[4px]">
+              ELARIS Collection
+            </p>
+            <h1 class="text-3xl font-bold mt-2 md:text-4xl ">
+              Discover Your Style
+            </h1>
+          </div>
+
+          <p id="productCount" class="text-sm text-gray-500">
+            8 Products
+          </p>
+        </div>
+
+        <!--Product Grid-->
+        <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-10">
+          <!--Products-->
+          <div class="product-item group" data-name="Floral Summer Shirt" data-occasion="Summer" data-color="Blue" data-arrival="New">
+            <div class="relative overflow-hidden rounded-lg bg-gray-100">
+              <img src="./images/product1.jpg" class="w-full h-[250px] md:h-[320px] object-cover transition duration-500 group-hover:scale-105">
+              <button class="flex items-center justify-center absolute top-3 right-3 w-9 h-9 bg-white rounded-full hover:bg-black hover:text-white transition ">
+                ♡
+              </button>
+            </div>
+            <h3 class="font-semibold mt-3">
+              Floral Summer Shirt
+            </h3>
+            <p class="text-gray-500 text-sm mt-1">
+              $2,200
+            </p>
+          </div>
+
+         
+         
+          <div class="product-item group" data-name="Summer Green Shirt" data-occasion="Summer" data-color="Green" data-arrival="New">
+            <div class="relative overflow-hidden rounded-lg bg-gray-100">
+              <img src="./images/product2.jpg" class="w-full h-[250px] md:h-[320px] object-cover transition duration-500 group-hover:scale-105">
+              <button class="flex items-center justify-center absolute top-3 right-3 w-9 h-9 bg-white rounded-full hover:bg-black hover:text-white transition ">
+                ♡
+              </button>
+            </div>
+            <h3 class="font-semibold mt-3">
+              Summer Green
+            </h3>
+            <p class="text-gray-500 text-sm mt-1">
+              $2,600
+            </p>
+          </div>
+
+          
+          <div class="product-item group" data-name="Party Floral Shirt" data-occasion="Party" data-color="Red" data-arrival="New">
+            <div class="relative overflow-hidden rounded-lg bg-gray-100">
+              <img src="./images/product5.jpg" class="w-full h-[250px] md:h-[320px] object-cover transition duration-500 group-hover:scale-105">
+              <button class="flex items-center justify-center absolute top-3 right-3 w-9 h-9 bg-white rounded-full hover:bg-black hover:text-white transition ">
+                ♡
+              </button>
+            </div>
+            <h3 class="font-semibold mt-3">
+              Party Floral Shirt
+            </h3>
+            <p class="text-gray-500 text-sm mt-1">
+              $3,999
+            </p>
+          </div>
+
+          
+          <div class="product-item group" data-name="Floral White Shirt" data-occasion="Summer" data-color="White" data-arrival="Old">
+            <div class="relative overflow-hidden rounded-lg bg-gray-100">
+              <img src="./images/product4.jpg" class="w-full h-[250px] md:h-[320px] object-cover transition duration-500 group-hover:scale-105">
+              <button class="flex items-center justify-center absolute top-3 right-3 w-9 h-9 bg-white rounded-full hover:bg-black hover:text-white transition ">
+                ♡
+              </button>
+            </div>
+            <h3 class="font-semibold mt-3">
+              Floral White Shirt
+            </h3>
+            <p class="text-gray-500 text-sm mt-1">
+              $3,999
+            </p>
+          </div>
+
+          
+          <div class="product-item group" data-name="Beach Shirt" data-occasion="Beach" data-color="Blue" data-arrival="New">
+            <div class="relative overflow-hidden rounded-lg bg-gray-100">
+              <img src="./images/product6.jpg" class="w-full h-[250px] md:h-[320px] object-cover transition duration-500 group-hover:scale-105">
+              <button class="flex items-center justify-center absolute top-3 right-3 w-9 h-9 bg-white rounded-full hover:bg-black hover:text-white transition ">
+                ♡
+              </button>
+            </div>
+            <h3 class="font-semibold mt-3">
+              Beach Shirt
+            </h3>
+            <p class="text-gray-500 text-sm mt-1">
+              $2,579
+            </p>
+          </div>
+
+          
+          <div class="product-item group" data-name="Party Red Shirt" data-occasion="Party" data-color="Red" data-arrival="New">
+            <div class="relative overflow-hidden rounded-lg bg-gray-100">
+              <img src="./images/product3.jpg" class="w-full h-[250px] md:h-[320px] object-cover transition duration-500 group-hover:scale-105">
+              <button class="flex items-center justify-center absolute top-3 right-3 w-9 h-9 bg-white rounded-full hover:bg-black hover:text-white transition ">
+                ♡
+              </button>
+            </div>
+            <h3 class="font-semibold mt-3">
+              Party Red Shirt
+            </h3>
+            <p class="text-gray-500 text-sm mt-1">
+              $2,579
+            </p>
+          </div>
+
+          
+          <div class="product-item group" data-name="Floral Party Shirt" data-occasion="Party" data-color="Green" data-arrival="Old">
+            <div class="relative overflow-hidden rounded-lg bg-gray-100">
+              <img src="./images/product7.jpg" class="w-full h-[250px] md:h-[320px] object-cover transition duration-500 group-hover:scale-105">
+              <button class="flex items-center justify-center absolute top-3 right-3 w-9 h-9 bg-white rounded-full hover:bg-black hover:text-white transition ">
+                ♡
+              </button>
+            </div>
+            <h3 class="font-semibold mt-3">
+              Floral Party Shirt
+            </h3>
+            <p class="text-gray-500 text-sm mt-1">
+              $3,999
+            </p>
+          </div>
+
+          
+          <div class="product-item group" data-name="Classic Summer Shirt" data-occasion="Summer" data-color="Blue" data-arrival="Old">
+            <div class="relative overflow-hidden rounded-lg bg-gray-100">
+              <img src="./images/product8.jpg" class="w-full h-[250px] md:h-[320px] object-cover transition duration-500 group-hover:scale-105">
+              <button class="flex items-center justify-center absolute top-3 right-3 w-9 h-9 bg-white rounded-full hover:bg-black hover:text-white transition ">
+                ♡
+              </button>
+            </div>
+            <h3 class="font-semibold mt-3">
+              Classic Summer Shirt
+            </h3>
+            <p class="text-gray-500 text-sm mt-1">
+              $2,200
+            </p>
+          </div>
+        </div>
+
+        <div id="noResults" class="hidden text-center py-20">
+          <h2 class="text-2xl font-semibold">
+            No products found
+          </h2>
+          <p class="text-gray-500 mt-2">
+            Try changing your search or filters.
+          </p>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <section id="newsletterSection" class="w-[90%] mx-auto py-16">
+    <div class="bg-blue-950 text-white rounded-2xl px-6 py-12 md:px-12 md:py-16 text-center">
+      <p class="text-gray-400 mb-3 text-xs md:text-sm uppercase tracking-[4px] ">
+        Stay in Style
+      </p>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold">
+        Join the ELARIS Newsletter
+      </h1>
+      <p class="text-gray-300 text-lg md:text-base max-w-[600px] mx-auto mt-4 leading-relaxed">
+        Be the first to discover new arrivals, exclusive collections, and special offers curated just for you.
+      </p>
+
+      <form class="w-full flex flex-col sm:flex-row gap-3 max-w-[650px]  mx-auto mt-8">
+        <input type="email" placeholder="Enter your email address" class="w-full min-w-0 bg-white text-black flex-1 px-5 rounded-lg outline-none border-2 border-transparent focus:border-gray-400 transition duration-300 " required>
+        
+        <button type="submit" class="shrink-0 rounded-lg bg-white text-black font-semibold px-7 py-4 hover:bg-gray-300 transition duration-300 ">
+          Subscribe
+        </button>
+
+      </form>
+      <p class="text-gray-400 text-sm mt-5">
+        No spam. Just style, inspiration, and ELARIS updates.
+      </p>
+    </div>
+  </section>
+
+  <section id="footerSection" class="bg-blue-950 text-white rounded-t-2xl">
+    <div class="w-[90%] mx-auto py-12">
+
+      <div class="flex flex-col justify-between gap-8 md:flex-row ">
+        <div class="max-w-[550px]">
+          <h1 class="text-2xl font-bold tracking-wide">
+            ELARIS
+          </h1>
+          <p class="text-gray-400 text-sm leading-relaxed mt-3">
+            Discover effortless fashion, timeless styles, and carefully
+            curated collections designed to make every look feel uniquely yours.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-base mb-4">
+            Explore
+          </h3>
+          <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400">
+
+            <a href="#" class="hover:text-white transition">Home</a>
+            <a href="#" class="hover:text-white transition">Collections</a>
+            <a href="#" class="hover:text-white transition">New Arrivals</a>
+            <a href="#" class="hover:text-white transition">Most Wanted</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-6 mt-10">
+
+        <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white hover:scale-110 transition duration-300">
+          <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+        </svg>
+        </a>
+
+        <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-white hover:scale-110 transition duration-300">
+           <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26
+          8.502 11.24H16.17l-5.214-6.817
+          L4.99 21.75H1.68l7.73-8.835
+          L1.254 2.25H8.08l4.713 6.231
+          5.45-6.231Z"/>
+        </svg>
+        </a>
+
+        <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-white hover:scale-110 transition duration-300">
+          <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="currentColor">
+          <path
+            d="M14 8h3V4h-3c-3.3 0-5 1.7-5 5v3H6v4h3v8h4v-8h3l1-4h-4V9c0-.7.3-1 1-1Z"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="md:flex-row flex flex-col justify-between gap-3 text-sm text-gray-500 border-t border-gray-700 mt-8 pt-6 ">
+        <p>
+          &copy; 2026 ELARIS. All rights reserved.
+        </p>
+        <p>
+          Designed for fashion. Built with simplicity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="./script.js"></script>
+</body>
+</html>

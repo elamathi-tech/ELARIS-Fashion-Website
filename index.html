@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html{
+      scroll-behavior: smooth;
+    }
+  </style>
+  <title>Elaris</title>
+
+  <link rel="stylesheet" href="./src/output.css">
+
+</head>
+
+<body class="font-sans">
+
+  <div id="offerBar" class="bg-blue-950 text-white py-2 px-4">
+    <div class="flex items-center justify-center relative">
+      <p class="text-sm md:text-base text-center">
+        Sign Up and <span class="font-bold">GET 20% OFF</span> for your first order  
+      </p>
+      <button id="closeOffer" class="absolute right-2 md:right-8 text-xl font-semibold hover:text-gray-300 transition" aria-label="Close offer">&times;</button>
+    </div>
+  </div>
+
+  <!--Desktop navbar-->
+  <nav class="flex justify-between p-5 bg-amber-100">
+    <h1 class="text-2xl font-bold">ELARIS</h1>
+    <svg id="menubar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="lucide lucide-menu-icon lucide-menu md:hidden ">
+      <path d="M4 5h16"  />
+      <path d="M4 12h16" />
+      <path d="M4 19h16" />
+    </svg>
+
+    <ul class="flex gap-5 hidden md:flex">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="#newArrivals">New Arrivals</a></li>
+      <li><a href="#mostWanted">Most Wanted</a></li>
+      <li><a href="./collections.html">Collections</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+      
+    </ul>
+  </nav>
+
+  <!--Mobile navbar-->
+  <section id="sidenav" class="bg-blue-950 text-white fixed transition-[left] duration-1000 z-20 md:hidden"
+    style="width:50%; height:100vh; top:0; left:-50%">
+    <div class="text-right p-5">
+      <p id="close" class="inline font-bold text-2xl cursor-pointer ">&times;</p>
+    </div>
+    <ul class="flex gap-5 flex-col p-4 ">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="#newArrivals">New Arrivals</a></li>
+      <li><a href="#mostWanted">Most Wanted</a></li>
+      <li><a href="./collections.html">Collections</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+      
+    </ul>
+  </section>
+
+
+  <section id="heroSection" class="relative">
+
+    <svg id="leftArrow" xmlns="http://www.w3.org/2000/svg" width="28" height="30" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+      class="lucide lucide-chevron-left-icon lucide-chevron-left absolute top-[50%] left-[5%] text-white -translate-y-1/2 z-10">
+      <path d="m15 18-6-6 6-6" />
+    </svg>
+
+    <div id="viewport" class="overflow-hidden m-auto w-[90%] h-[500px] mt-[20px]">
+      <div id="slider" class="flex w-[300%] h-[100%] transition-transform duration-1000 ease-in-out">
+
+        <div class="slide flex-[0_0_33.333%] relative rounded-2xl">
+          <img class="w-[100%] h-[100%] object-cover rounded-2xl" src="./images/1.png">
+          <div class="absolute inset-0 bg-black/60 z-[1] rounded-2xl"></div>
+
+          <div class="content absolute z-10 top-[50%] left-[8%] -translate-y-1/2 text-white">
+            <p class="text-sm md:text-base uppercase tracking-[4px] font-medium mb-4">
+              New Collection
+            </p>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">
+              Define Your Style
+            </h1>
+            <h3 class="text-base md:text-lg lg:text-xl max-w-[450px] leading-relaxed mb-8">
+              Discover pieces designed to express who you are.
+            </h3>
+            <button
+              class="bg-white text-black px-7 py-3 font-semibold uppercase tracking-wider hover:bg-red-500 hover:text-white transition duratoin-300">
+              Shop Collection</button>
+          </div>
+        </div>
+
+        <div class="slide flex-[0_0_33.333%] relative rounded-2xl">
+          <img class="w-[100%] h-[100%] object-cover rounded-2xl" src="./images/2.png">
+          <div class="absolute inset-0 bg-black/60 z-[1] rounded-2xl"></div>
+
+          <div class="content absolute z-10 top-[50%] left-[8%] -translate-y-1/2 text-white">
+            <p class="text-sm md:text-base uppercase tracking-[4px] font-bold mb-4">
+              The Everyday Edit
+            </p>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">
+              Everyday, Elevated
+            </h1>
+            <h3 class="text-base md:text-lg lg:text-xl max-w-[450px] leading-relaxed mb-8">
+              Effortless looks designed for every moment.
+            </h3>
+            <button
+              class="bg-white text-black px-7 py-3 font-semibold uppercase tracking-wider hover:bg-red-500 hover:text-white transition duratoin-300">
+              Explore Collection
+            </button>
+          </div>
+        </div>
+
+        <div class="slide flex-[0_0_33.333%] relative rounded-2xl">
+          <img class="w-[100%] h-[100%] object-cover rounded-2xl" src="./images/3.png">
+          <div class="absolute inset-0 bg-black/60 z-[1] rounded-2xl"></div>
+
+          <div class="content absolute top-[50%] left-[8%] z-10 -translate-y-1/2 text-white">
+            <p class="text-sm md:text-base uppercase tracking-[4px] font-medium mb-4">
+              Signature Style
+            </p>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">
+              Make Your Statement
+            </h1>
+            <h3 class="text-base md:text-lg lg:text-xl max-w-[450px] leading-relaxed mb-8">
+              Bold pieces. Confident looks. Unforgettable style.
+            </h3>
+            <button
+              class="bg-white text-black px-7 py-3 font-semibold uppercase tracking-wider hover:bg-red-500 hover:text-white transition duratoin-300">Shop
+              Now</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <svg id="rightArrow" xmlns="http://www.w3.org/2000/svg" width="28" height="30" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+      class="lucide lucide-chevron-right-icon lucide-chevron-right absolute top-[50%] right-[5%] text-white -translate-y-1/2 z-10">
+      <path d="m9 18 6-6-6-6" />
+    </svg>
+
+  </section>
+
+
+  <section id="brandSection" class="w-[90%] mx-auto py-12">
+    <div class="mb-10">
+      <p class="text-sm uppercase tracking-[4px] text-gray-500 font-medium">
+        Our Selection
+      </p>
+      <h1 class="text-3xl md:text-4xl font-bold mt-2">
+        Featured Brands
+      </h1>
+    </div>
+
+    <div class="grid grid-cols-3 md:grid-cols-6 gap-y-10 md:gap-y-0 gap-x-6 items-center">
+      <div class="flex flex-col justify-center items-center group">
+        <img
+          class="w-[80px] h-[80px] rounded-full object-contain transition duration-300 group-hover:scale-110 md:w-[100px] md:h-[100px]"
+          src="./images/b1.png" alt="AURELLE">
+        <p class="mt-3 font-semibold tracking-wider">AURELLE</p>
+      </div>
+
+      <div class="flex flex-col justify-center items-center group">
+        <img
+          class="w-[80px] h-[80px] rounded-full object-contain transition duration-300 group-hover:scale-110 md:w-[100px] md:h-[100px]"
+          src="./images/b2.png" alt="NOIRE">
+        <p class="mt-3 font-semibold tracking-wider">NOIRE</p>
+      </div>
+
+      <div class="flex flex-col justify-center items-center group">
+        <img
+          class="w-[80px] h-[80px] rounded-full object-contain transition duration-300 group-hover:scale-110 md:w-[100px] md:h-[100px]"
+          src="./images/b3.png" alt="VENORA">
+        <p class="mt-3 font-semibold tracking-wider">VENORA</p>
+      </div>
+
+      <div class="flex flex-col justify-center items-center group">
+        <img
+          class="w-[80px] h-[80px] rounded-full object-contain transition duration-300 group-hover:scale-110 md:w-[100px] md:h-[100px]"
+          src="./images/b4.png" alt="MONVER">
+        <p class="mt-3 font-semibold tracking-wider">MONVER</p>
+      </div>
+
+      <div class="flex flex-col justify-center items-center group">
+        <img
+          class="w-[80px] h-[80px] rounded-full object-contain transition duration-300 group-hover:scale-110 md:w-[100px] md:h-[100px]"
+          src="./images/b5.png" alt="ELVORA">
+        <p class="mt-3 font-semibold tracking-wider">ELVORA</p>
+      </div>
+
+      <div class="flex flex-col justify-center items-center group">
+        <img
+          class="w-[80px] h-[80px] rounded-full object-contain transition duration-300 group-hover:scale-110 md:w-[100px] md:h-[100px]"
+          src="./images/b6.png" alt="LUNEA">
+        <p class="mt-3 font-semibold tracking-wider">LUNEA</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experienceSection" class="w-[90%] mx-auto py-12">
+    <div class="flex flex-col md:flex-row justify-between gap-4 mb-8 items-start md:items-center">
+      <div>
+        <p class="uppercase text-sm text-gray-500 font-medium tracking-[4px]">
+          Why Choose ELARIS
+        </p>
+        <h1 class="text-3xl md:text-4xl mt-2 font-bold">
+          We Create Exceptional
+          <span class="block">Shopping Experiences</span>
+        </h1>
+      </div>
+      <p class="text-gray-600 max-w-[500px] text-sm leading-relaxed md:text-base">
+        We believe fashion should feel effortless, inspiring, and personal.
+        Every detail of ELARIS is designed to make your shopping experience better.
+      </p>
+    </div>
+
+    <!--cards-->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <div class="bg-amber-100 rounded-xl p-6 hover:-translate-y-1 transition duration-300">
+        <div class="mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+          </svg>
+
+        </div>
+        <h3 class="text-base mb-2 font-semibold">Curated Collections</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Discover thoughtfully selected styles designed to make
+          every outfit feel effortless and unique.
+        </p>
+      </div>
+
+      <div class="bg-amber-100 rounded-xl p-6 hover:-translate-y-1 transition duration-300">
+        <div class="mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
+          </svg>
+
+        </div>
+        <h3 class="text-base mb-2 font-semibold">Effortless Experience</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Browse collections easily with a clean and simple shopping experience built around you.
+        </p>
+      </div>
+
+      <div class="bg-amber-100 rounded-xl p-6 hover:-translate-y-1 transition duration-300">
+        <div class="mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-wand-sparkles-icon lucide-wand-sparkles">
+            <path
+              d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72" />
+            <path d="m14 7 3 3" />
+            <path d="M5 6v4" />
+            <path d="M19 14v4" />
+            <path d="M10 2v2" />
+            <path d="M7 8H3" />
+            <path d="M21 16h-4" />
+            <path d="M11 3H9" />
+          </svg>
+        </div>
+        <h3 class="text-base mb-2 font-semibold">Fresh Styles</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Stay inspired with new styles and fresh collections added regularly to keep your wardrobe evolving.
+        </p>
+      </div>
+
+      <div class="bg-amber-100 rounded-xl p-6 hover:-translate-y-1 transition duration-300">
+        <div class="mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-truck-electric-icon lucide-truck-electric">
+            <path d="M14 19V7a2 2 0 0 0-2-2H9" />
+            <path d="M15 19H9" />
+            <path d="M19 19h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62L18.3 9.38a1 1 0 0 0-.78-.38H14" />
+            <path d="M2 13v5a1 1 0 0 0 1 1h2" />
+            <path d="M4 3 2.15 5.15a.495.495 0 0 0 .35.86h2.15a.47.47 0 0 1 .35.86L3 9.02" />
+            <circle cx="17" cy="19" r="2" />
+            <circle cx="7" cy="19" r="2" />
+          </svg>
+        </div>
+        <h3 class="text-base mb-2 font-semibold">Fast & Easy Delivery</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Enjoy a smooth journey from discovering your style to receiving your order right at your doorstep.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="newArrivals" class="w-[90%] mx-auto py-12">
+
+    <div class="mb-8">
+      <p class="text-gray-500 font-medium text-sm uppercase tracking-[4px] ">
+        Fresh From ELARIS
+      </p>
+      <h1 class="text-3xl font-bold mt-2 md:text-4xl">
+        New Arrivals
+      </h1>
+      <p class="text-gray-500 max-w-[550px] mt-5 text-sm md:text-base">
+        Discover the latest styles carefully selected to refresh your wardrobe.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <div class="bg-gray-100 rounded-xl group relative overflow-hidden">
+        <img
+          class="w-full h-[300px] object-cover transition duration-700 ease-in-out group-hover:scale-110 md:h-[380px]"
+          src="./images/n1.png" alt="New Arrival">
+        <div class="bg-black/10 absolute inset-0 group-hover:bg-black/40 transition duration-500"></div>
+
+        <div class="flex flex-col pb-8 absolute inset-0 items-center justify-end">
+          <p
+            class="text-white uppercase mb-3 text-xs tracking-[3px] opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition duration-500">
+            New Collection
+          </p>
+          <button
+            class="bg-white font-semibold text-black px-6 py-3 rounded-full text-sm hover:bg-black hover:text-white transition duration-300 shadow-lg">
+            Shop Now
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-gray-100 rounded-xl group relative overflow-hidden">
+        <img
+          class="w-full h-[300px] object-cover transition duration-700 ease-in-out group-hover:scale-110 md:h-[380px]"
+          src="./images/n3.jpg" alt="New Arrival">
+        <div class="bg-black/10 absolute inset-0 group-hover:bg-black/40 transition duration-500"></div>
+
+        <div class="flex flex-col pb-8 absolute inset-0 items-center justify-end">
+          <p
+            class="text-white uppercase mb-3 text-xs tracking-[3px] opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition duration-500">
+            New Collection
+          </p>
+          <button
+            class="bg-white font-semibold text-black px-6 py-3 rounded-full text-sm hover:bg-black hover:text-white transition duration-300 shadow-lg">
+            Shop Now
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-gray-100 rounded-xl group relative overflow-hidden">
+        <img
+          class="w-full h-[300px] object-cover transition duration-700 ease-in-out group-hover:scale-110 md:h-[380px]"
+          src="./images/n4.jpg" alt="New Arrival">
+        <div class="bg-black/10 absolute inset-0 group-hover:bg-black/40 transition duration-500"></div>
+
+        <div class="flex flex-col pb-8 absolute inset-0 items-center justify-end">
+          <p
+            class="text-white uppercase mb-3 text-xs tracking-[3px] opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition duration-500">
+            New Collection
+          </p>
+          <button
+            class="bg-white font-semibold text-black px-6 py-3 rounded-full text-sm hover:bg-black hover:text-white transition duration-300 shadow-lg">
+            Shop Now
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-gray-100 rounded-xl group relative overflow-hidden">
+        <img
+          class="w-full h-[300px] object-cover transition duration-700 ease-in-out group-hover:scale-110 md:h-[380px]"
+          src="./images/n2.jpg" alt="New Arrival">
+        <div class="bg-black/10 absolute inset-0 group-hover:bg-black/40 transition duration-500"></div>
+
+        <div class="flex flex-col pb-8 absolute inset-0 items-center justify-end">
+          <p
+            class="text-white uppercase mb-3 text-xs tracking-[3px] opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition duration-500">
+            New Collection
+          </p>
+          <button
+            class="bg-white font-semibold text-black px-6 py-3 rounded-full text-sm hover:bg-black hover:text-white transition duration-300 shadow-lg">
+            Shop Now
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="mostWanted" class="w-[90%] mx-auto py-12">
+
+    <div class="flex justify-between items-end mb-8">
+      <div>
+        <p class="text-gray-500 font-medium uppercase text-sm tracking-[4px] ">
+          ELARIS SELECTION
+        </p>
+        <h1 class="font-bold text-3xl mt-2 md:text-4xl">
+          Most Wanted
+        </h1>
+      </div>
+
+      <div class="hidden md:flex gap-2">
+        <button id="mostwantedLeft"
+          class="flex items-center justify-center w-10 h-10 border border-gray-300 rounded-full hover:bg-black hover:text-white transition duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
+        </button>
+
+        <button id="mostwantedRight"
+          class="flex items-center justify-center w-10 h-10 border border-gray-300 rounded-full hover:bg-black hover:text-white transition duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <div id="mostwantedViewport" class="relative overflow-x-auto overflow-y-hidden scroll-smooth snap-x snap-mandatory 
+            [scrollbar-width:none]
+            [&::-webkit-scrollbar]:hidden">
+      <div id="mostwantedSlider" class="flex gap-5 w-max">
+        
+        <div class="productCard group relative flex-none w-[220px] sm:w-[240px] md:w-[260px]">
+          <div class="bg-gray-100 relative overflow-hidden rounded-lg ">
+            <span class="bg-red-500 text-white font-semibold text-xs px-3 py-1 rounded-md absolute top-3 left-3 z-20 ">
+              SALE
+            </span>
+
+            <button class="flex items-center justify-center absolute bg-white rounded-full top-3 right-3 z-20 w-9 h-9 hover:bg-black hover:text-white transition duration-300 " aria-label="Add to wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+            </button>
+
+            <img src="./images/p1.jpg" class="w-full h-[300px] object-cover transition duration-700 ease-in-out group-hover:scale-110">
+            <div class="bg-black/0 absolute inset-0 group-hover:bg-black/15 transition duration-500">
+            </div>
+          </div>
+        </div>
+
+        <div class="productCard group relative flex-none w-[220px] sm:w-[240px] md:w-[260px]">
+          <div class="bg-gray-100 relative overflow-hidden rounded-lg ">
+            <span class="bg-red-500 text-white font-semibold text-xs px-3 py-1 rounded-md absolute top-3 left-3 z-20 ">
+              SALE
+            </span>
+
+            <button class="flex items-center justify-center absolute bg-white rounded-full top-3 right-3 z-20 w-9 h-9 hover:bg-black hover:text-white transition duration-300 " aria-label="Add to wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+            </button>
+
+            <img src="./images/p2.jpg" class="w-full h-[300px] object-cover transition duration-700 ease-in-out group-hover:scale-110">
+            <div class="bg-black/0 absolute inset-0 group-hover:bg-black/15 transition duration-500">
+            </div>
+          </div>
+        </div>
+
+        <div class="productCard group relative flex-none w-[220px] sm:w-[240px] md:w-[260px]">
+          <div class="bg-gray-100 relative overflow-hidden rounded-lg ">
+            <span class="bg-red-500 text-white font-semibold text-xs px-3 py-1 rounded-md absolute top-3 left-3 z-20 ">
+              SALE
+            </span>
+
+            <button class="flex items-center justify-center absolute bg-white rounded-full top-3 right-3 z-20 w-9 h-9 hover:bg-black hover:text-white transition duration-300 " aria-label="Add to wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+            </button>
+
+            <img src="./images/p3.jpg" class="w-full h-[300px] object-cover transition duration-700 ease-in-out group-hover:scale-110">
+            <div class="bg-black/0 absolute inset-0 group-hover:bg-black/15 transition duration-500">
+            </div>
+          </div>
+        </div>
+
+        <div class="productCard group relative flex-none w-[220px] sm:w-[240px] md:w-[260px]">
+          <div class="bg-gray-100 relative overflow-hidden rounded-lg ">
+            <span class="bg-red-500 text-white font-semibold text-xs px-3 py-1 rounded-md absolute top-3 left-3 z-20 ">
+              SALE
+            </span>
+
+            <button class="flex items-center justify-center absolute bg-white rounded-full top-3 right-3 z-20 w-9 h-9 hover:bg-black hover:text-white transition duration-300 " aria-label="Add to wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+            </button>
+
+            <img src="./images/p4.jpg" class="w-full h-[300px] object-cover transition duration-700 ease-in-out group-hover:scale-110">
+            <div class="bg-black/0 absolute inset-0 group-hover:bg-black/15 transition duration-500">
+            </div>
+          </div>
+        </div>
+
+        <div class="productCard group relative flex-none w-[220px] sm:w-[240px] md:w-[260px]">
+          <div class="bg-gray-100 relative overflow-hidden rounded-lg ">
+            <span class="bg-red-500 text-white font-semibold text-xs px-3 py-1 rounded-md absolute top-3 left-3 z-20 ">
+              SALE
+            </span>
+
+            <button class="flex items-center justify-center absolute bg-white rounded-full top-3 right-3 z-20 w-9 h-9 hover:bg-black hover:text-white transition duration-300 " aria-label="Add to wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+            </button>
+
+            <img src="./images/p5.jpg" class="w-full h-[300px] object-cover transition duration-700 ease-in-out group-hover:scale-110">
+            <div class="bg-black/0 absolute inset-0 group-hover:bg-black/15 transition duration-500">
+            </div>
+          </div>
+        </div>
+
+        <div class="productCard group relative flex-none w-[220px] sm:w-[240px] md:w-[260px]">
+          <div class="bg-gray-100 relative overflow-hidden rounded-lg ">
+            <span class="bg-red-500 text-white font-semibold text-xs px-3 py-1 rounded-md absolute top-3 left-3 z-20 ">
+              SALE
+            </span>
+
+            <button class="flex items-center justify-center absolute bg-white rounded-full top-3 right-3 z-20 w-9 h-9 hover:bg-black hover:text-white transition duration-300 " aria-label="Add to wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+            </button>
+
+            <img src="./images/p6.jpg" class="w-full h-[300px] object-cover transition duration-700 ease-in-out group-hover:scale-110">
+            <div class="bg-black/0 absolute inset-0 group-hover:bg-black/15 transition duration-500">
+            </div>
+          </div>
+        </div>
+
+        <div class="productCard group relative flex-none w-[220px] sm:w-[240px] md:w-[260px]">
+          <div class="bg-gray-100 relative overflow-hidden rounded-lg ">
+            <span class="bg-red-500 text-white font-semibold text-xs px-3 py-1 rounded-md absolute top-3 left-3 z-20 ">
+              SALE
+            </span>
+
+            <button class="flex items-center justify-center absolute bg-white rounded-full top-3 right-3 z-20 w-9 h-9 hover:bg-black hover:text-white transition duration-300 " aria-label="Add to wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+            </button>
+
+            <img src="./images/p7.jpg" class="w-full h-[300px] object-cover transition duration-700 ease-in-out group-hover:scale-110">
+            <div class="bg-black/0 absolute inset-0 group-hover:bg-black/15 transition duration-500">
+            </div>
+          </div>
+        </div>
+
+        <div class="productCard group relative flex-none w-[220px] sm:w-[240px] md:w-[260px]">
+          <div class="bg-gray-100 relative overflow-hidden rounded-lg ">
+            <span class="bg-red-500 text-white font-semibold text-xs px-3 py-1 rounded-md absolute top-3 left-3 z-20 ">
+              SALE
+            </span>
+
+            <button class="flex items-center justify-center absolute bg-white rounded-full top-3 right-3 z-20 w-9 h-9 hover:bg-black hover:text-white transition duration-300 " aria-label="Add to wishlist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+            </button>
+
+            <img src="./images/p8.jpg" class="w-full h-[300px] object-cover transition duration-700 ease-in-out group-hover:scale-110">
+            <div class="bg-black/0 absolute inset-0 group-hover:bg-black/15 transition duration-500">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="newsletterSection" class="w-[90%] mx-auto py-16">
+    <div class="bg-blue-950 text-white rounded-2xl px-6 py-12 md:px-12 md:py-16 text-center">
+      <p class="text-gray-400 mb-3 text-xs md:text-sm uppercase tracking-[4px] ">
+        Stay in Style
+      </p>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold">
+        Join the ELARIS Newsletter
+      </h1>
+      <p class="text-gray-300 text-lg md:text-base max-w-[600px] mx-auto mt-4 leading-relaxed">
+        Be the first to discover new arrivals, exclusive collections, and special offers curated just for you.
+      </p>
+
+      <form class="w-full flex flex-col sm:flex-row gap-3 max-w-[650px]  mx-auto mt-8">
+        <input type="email" placeholder="Enter your email address" class="w-full min-w-0 bg-white text-black flex-1 px-5 rounded-lg outline-none border-2 border-transparent focus:border-gray-400 transition duration-300 " required>
+        
+        <button type="submit" class="shrink-0 rounded-lg bg-white text-black font-semibold px-7 py-4 hover:bg-gray-300 transition duration-300 ">
+          Subscribe
+        </button>
+
+      </form>
+      <p class="text-gray-300 text-sm mt-5">
+        No spam. Just style, inspiration, and ELARIS updates.
+      </p>
+    </div>
+  </section>
+
+  <section id="footerSection" class="bg-blue-950 text-white rounded-t-2xl">
+    <div class="w-[90%] mx-auto py-12">
+
+      <div class="flex flex-col justify-between gap-8 md:flex-row ">
+        <div class="max-w-[550px]">
+          <h1 class="text-2xl font-bold tracking-wide">
+            ELARIS
+          </h1>
+          <p class="text-gray-400 text-sm leading-relaxed mt-3">
+            Discover effortless fashion, timeless styles, and carefully
+            curated collections designed to make every look feel uniquely yours.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-base mb-4">
+            Explore
+          </h3>
+          <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400">
+
+            <a href="#" class="hover:text-white transition">Home</a>
+            <a href="#" class="hover:text-white transition">Collections</a>
+            <a href="#" class="hover:text-white transition">New Arrivals</a>
+            <a href="#" class="hover:text-white transition">Most Wanted</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-6 mt-10">
+
+        <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white hover:scale-110 transition duration-300">
+          <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+        </svg>
+        </a>
+
+        <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-white hover:scale-110 transition duration-300">
+           <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26
+          8.502 11.24H16.17l-5.214-6.817
+          L4.99 21.75H1.68l7.73-8.835
+          L1.254 2.25H8.08l4.713 6.231
+          5.45-6.231Z"/>
+        </svg>
+        </a>
+
+        <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-white hover:scale-110 transition duration-300">
+          <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="currentColor">
+          <path
+            d="M14 8h3V4h-3c-3.3 0-5 1.7-5 5v3H6v4h3v8h4v-8h3l1-4h-4V9c0-.7.3-1 1-1Z"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="md:flex-row flex flex-col justify-between gap-3 text-sm text-gray-500 border-t border-gray-700 mt-8 pt-6 ">
+        <p>
+          &copy; 2026 ELARIS. All rights reserved.
+        </p>
+        <p>
+          Designed for fashion. Built with simplicity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
