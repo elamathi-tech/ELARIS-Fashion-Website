@@ -422,9 +422,6 @@
   .max-w-4xl {
     max-width: var(--container-4xl);
   }
-  .max-w-\[55\] {
-    max-width: 55;
-  }
   .max-w-\[450px\] {
     max-width: 450px;
   }
@@ -1010,9 +1007,6 @@
     --tw-ring-color: var(--color-gray-900);
   }
   @media (width >= 40rem) {
-    .sm\:flex {
-      display: flex;
-    }
     .sm\:w-\[240px\] {
       width: 240px;
     }
